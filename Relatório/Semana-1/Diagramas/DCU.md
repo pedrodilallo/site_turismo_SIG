@@ -3,14 +3,14 @@ skinparam actorStyle awesome
 !theme mars
 left to right direction
 
-actor Clientes as cliente
-actor "Administrador do Sistema" as sys_admin
-actor Funcionários as funcionario
-actor Fornecedores as fornecedores
-actor Motoristas as motoristas
-actor "Sistema de Pagamentos" as pagamentos
-actor "Sistema de Roteirização" as roteirizador
-actor "Sistema Financeiro" as financeiro
+actor Clientes as cliente <<human>>
+actor "Administrador do Sistema" as sys_admin <<human>>
+actor Funcionários as funcionario <<human>>
+actor Fornecedores as fornecedores <<human>>
+actor Motoristas as motoristas <<human>>
+actor "Sistema de Pagamentos" as pagamentos <<Application>>
+actor "Sistema de Roteirização" as roteirizador <<Application>>
+actor "Sistema Financeiro" as financeiro <<Application>>
 
 package "Registros"{
 fornecedores -- (Cadastrar Clientes)
