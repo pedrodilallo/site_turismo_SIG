@@ -89,7 +89,7 @@ O Diagrama de Caso de Uso é uma poderosa ferramenta utilizada na Engenharia de 
 
 No contexto do projeto proposto para a transportadora, o Diagrama de Caso de Uso desempenha um papel estratégico na comunicação com os stakeholders, na identificação dos atores envolvidos e na definição clara das funcionalidades essenciais para atender às necessidades dos usuários. Essa representação visual permite uma compreensão comum entre a equipe de desenvolvimento, gerentes, clientes e outras partes interessadas, alinhando expectativas e objetivos desde o início do projeto. Por isso, segue o Diagrama de Caso de Uso proposto para a transportadora:
 
-![Diagrama de Caso de uso](../Relatório/Semana%201/Diagramas/DCU.png)
+![Diagrama de Caso de uso](/Relatório/Semana%201/Diagramas/DCU.png)
 
 O Diagrama de Caso de Uso apresentado é uma representação visual que descreve de forma detalhada as interações entre os atores e o sistema proposto para a transportadora, oferecendo uma visão abrangente das funcionalidades do sistema e como elas se relacionam com os usuários e demais atores envolvidos.
 
