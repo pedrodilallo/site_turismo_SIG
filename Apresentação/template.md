@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: default
-
+fontsize: 11pt
 ---
 
 # Sistema Informação Gerencial para uma transportadora
@@ -151,7 +151,7 @@ No contexto do projeto proposto para a transportadora, o Diagrama de Caso de Uso
 
 
 ---
-![Diagrama de Caso de uso](../Relatório/Semana%201/Diagramas/DCU.png)
+![Diagrama de Caso de uso](../Relatório/Semana-1/Diagramas/DCU.png)
 
 ---
 **Diagrama de Caso de Uso (DCU)**
