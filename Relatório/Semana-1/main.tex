@@ -1,7 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[brazil]{babel}
 \usepackage{newtxtext} % Times New Roman
 \usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
 \usepackage{ragged2e}
@@ -12,26 +11,28 @@
 \usepackage{afterpage}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{caption}
+
 \makeindex % Criar índice depois
 
 
 % Início do corpo do texto
 \begin{document}
 
-\input{"Relatório/Semana-1/0-Capa/capa.tex"}
+\input{0-Capa/capa.tex}
 
 \newpage{}
 \tableofcontents{}
 \newpage{}
 
 \section{Introdução}
-\input{"Relatório/Semana-1/1-Introdução/introducao.tex"}
+\input{"1-Introdução/introducao.tex"}
 
 \section{Descrição Detalhada do problema}
-\input{"Relatório/Semana-1/2-Descrição-detalhada/descricao.tex"}
+\input{"2-Descrição-detalhada/descricao.tex"}
 
 \section{Levantamento de Requisitos}
-\input{"Relatório/Semana-1/3-Levantamento-de-Requisitos"}
+\input{3-Levantamento-de-Requisitos/requisitos.tex}
 
 
 \end{document}
