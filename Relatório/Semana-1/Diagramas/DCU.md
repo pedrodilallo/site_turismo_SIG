@@ -45,7 +45,7 @@ sys_admin -- (Consultar Relatórios sobre as Rotas)
 
 
 
-(Realizar cadastro) <.. (Selecionar cidades ou atrações do roteiro da API na API) : <<extends>>
+(Realizar cadastro) <.. (Selecionar cidades ou atrações do roteiro da API) : <<extends>>
 (Enviar dados sobre as cidades) ..> (Formatar e Computar os Dados Adquiridos) : <<include>>
 
 
