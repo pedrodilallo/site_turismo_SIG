@@ -44,6 +44,13 @@ digraph dfd_nivel0 {
     sistema -> coletador[label="dados_cliente"]
 
     sistema -> feedback[label="feedback_clientes"]
+    sistema -> feedback[label="solicitacao_relatorio_fdbk"]
+
+
+    sistema -> otimizador[label="dados_cidade"]
+    sistema -> otimizador[label="solicitacao_relatorio_rotas"]
+    sistema -> otimizador[label="dados_viagem"]
+
 
 
 }
