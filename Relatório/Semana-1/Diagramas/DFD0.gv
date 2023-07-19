@@ -1,0 +1,42 @@
+@startuml
+digraph dfd_nivel0 {
+    layout=circo
+    splines=true; esep=4;
+    edge[style=solid, penwidth="1", fontsize=10,labeldistance=0];
+    node[shape = record]
+
+
+
+
+    otimizar_rota [shape=circle];
+    
+
+    
+    cliente [label="Clientes"]
+    sys_admin [label="Administrador do Sistema"]
+    otimizador [label="Sistema de Otimização"]
+    coletador [label="Sistema de Coleta de dados"]
+    API [label="API do Google sobre as cidades"]
+    feedback [label="Sistema de Feedback"]
+
+    
+    
+    cliente -> otimizar_rota
+    
+    
+    sys_admin -> otimizar_rota
+    
+    
+    otimizador -> otimizar_rota
+    
+    
+    coletador -> otimizar_rota
+    
+    
+    API -> otimizar_rota
+    
+    
+    feedback -> otimizar_rota
+
+}
+@enduml
