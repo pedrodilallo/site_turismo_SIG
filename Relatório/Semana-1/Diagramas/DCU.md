@@ -1,6 +1,8 @@
 @startuml
 skinparam actorStyle awesome
 !theme mars
+
+left to right direction
 actor "Clientes" as cliente
 actor "Administrador do Sistema" as sys_admin
 
@@ -21,7 +23,9 @@ actor "Sistema de Otimização" as  otimizador
         actor "API do Google sobre as cidades" as API   
 
         cliente -- (Selecionar cidades ou atrações do roteiro da API)
+        
         (Selecionar cidades ou atrações do roteiro da API) ..> (Otimizar rotas): <<include>>
+
         (Solicitar a API do Google para Coletar Dados sobre as Cidades) ..> (Enviar dados sobre as cidades) : <<incude>>
         coletador -- (Solicitar a API do Google para Coletar Dados sobre as Cidades)
         coletador -- (Registrar Rotas Já Otimizadas em uma Base de Dados)
@@ -32,9 +36,15 @@ actor "Sistema de Otimização" as  otimizador
         (Otimizar rotas) ..> (Registrar Rotas Já Otimizadas em uma Base de Dados) : <<include>>
         (Registrar Rotas Já Otimizadas em uma Base de Dados) <.. (Consultar Relatórios sobre as Rotas) : <<extends>>
 
+        (Realizar cadastro) ..> (Armazenar Dados do cliente): <<include>>
+
+        coletador -- (Armazenar Dados do cliente)
+
+
+
     }
-(Registrar Rotas Já Otimizadas em uma Base de Dados) <.. (Elaborar Relatórios Sobre Rotas):<<include>>
-(Elaborar Relatórios Sobre Rotas) <.. (Consultar Relatórios sobre as Rotas): <<extends>> 
+
+(Elaborar Relatórios Sobre Rotas) ..> (Consultar Relatórios sobre as Rotas): <<include>> 
 (Elaborar Relatórios Sobre Rotas) -- otimizador
 
 }
