@@ -30,7 +30,6 @@ digraph dfd_nivel0 {
     otimizador -> sistema[label="rotas_otimizadas"]
     otimizador -> sistema[label="relatorio_rotas"]
     
-    coletador -> sistema[label="registro_rotas"]
     coletador -> sistema[label="dados_tratados"]    
 
     API -> sistema[label="dados_cliente"]
@@ -40,7 +39,7 @@ digraph dfd_nivel0 {
 #setas que vão
 
     sistema -> coletador[label="dados_cidade"]
-    sistema -> coletador[label=""]
+    sistema -> coletador[label="registro_rotas"]
 
 }
 @enduml
