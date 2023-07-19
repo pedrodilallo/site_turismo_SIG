@@ -11,16 +11,16 @@ actor "Sistema de Feedback" as feedback
 actor "Sistema de Log In" as login
 actor "Sistema de Coleta de dados" as coletador
 
-cliente -- (Cadastro de Novos Clientes)
-cliente -- (Enviar Cidades ou Atrações)
+cliente -- (Cadastrar Cliente)
+cliente -- (Selecionar cidades ou atrações do roteiro)
 cliente -- (Enviar Feedbacks)
-cliente -- (Receber Rotas Otimizadas)
+cliente -- (Solicitar Rotas Otimizadas)
 
 
 
-login   --   (Cadastro de Novos Clientes)
+login   --   (Cadastrar Cliente)
 
-coletador -- (Acessar a API do Google para Coletar Dados sobre as Cidades)
+coletador -- (Solicitar a API do Google para Coletar Dados sobre as Cidades)
 coletador -- (Registro de Rotas Já Otimizadas em uma Base de Dados)
 coletador -- (Formatar e Computar os Dados Adquiridos)
 
@@ -36,15 +36,18 @@ sys_admin -- (Consultar Relatórios sobre as Rotas)
 (Otimizar Rotas) -- otimizador 
 (Executar Pedidos de Otimização) -- otimizador 
 (Verificar Satisfação das Restrições) -- otimizador 
-(Receber Rotas Otimizadas) <.. (Otimizar Rotas) : <<include>>
-(Enviar Feedbacks) --> (Receber Feedbacks) : include
-(Receber Feedbacks) ..> (Elaborar Relatório sobre Feedbacks) : <<extends>>
+(Solicitar Rotas Otimizadas) ..> (Otimizar Rotas) : <<include>>
+
+
+(Enviar Feedbacks) ..> (Receber Feedbacks) : <<include>>
+(Receber Feedbacks) <.. (Elaborar Relatório sobre Feedbacks) : <<extends>>
+
 (Elaborar Relatório sobre Feedbacks) ..> (Consultar Relatórios sobre as Rotas) : <<extends>>
-(Consultar Relatórios sobre as Rotas) ..> (Elaborar Relatório sobre Feedbacks) : <<include>>
-(Cadastro de Novos Clientes) ..> (Enviar Cidades ou Atrações) : <<extends>>
+(Cadastrar Cliente) <.. (Selecionar cidades ou atrações do roteiro) : <<extends>>
+
 (Enviar dados sobre as cidades) ..> (Formatar e Computar os Dados Adquiridos) : <<include>>
-(Enviar Cidades ou Atrações) -->  (Receber Cidades ou Atrações de Interesse dos Clientes) : <<include>>
-(Acessar a API do Google para Coletar Dados sobre as Cidades) ..> (Enviar dados sobre as cidades) : <<incude>>
+(Selecionar cidades ou atrações do roteiro) ..>  (Receber Cidades ou Atrações de Interesse dos Clientes) : <<include>>
+(Solicitar a API do Google para Coletar Dados sobre as Cidades) ..> (Enviar dados sobre as cidades) : <<incude>>
 
 
 
