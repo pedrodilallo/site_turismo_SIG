@@ -19,7 +19,6 @@ package "Otimização dos Roteiros"{
 
 
 (Otimizar rotas) -- otimizador 
-(Otimizar rotas) ..> (Registrar Rotas Já Otimizadas em uma Base de Dados) : <<include>>
 
     package "Coleta dos Dados"{
         cliente -- (Selecionar cidades ou atrações do roteiro da API)
@@ -31,6 +30,8 @@ package "Otimização dos Roteiros"{
         API -- (Enviar dados sobre as cidades)
         API -- (Disponibilizar informações sobre as cidades)
         (Disponibilizar informações sobre as cidades) <.. (Selecionar cidades ou atrações do roteiro da API) : <<include>>
+        (Otimizar rotas) ..> (Registrar Rotas Já Otimizadas em uma Base de Dados) : <<include>>
+
 
     }
 
