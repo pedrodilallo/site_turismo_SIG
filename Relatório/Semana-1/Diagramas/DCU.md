@@ -14,14 +14,14 @@ cliente -- (Realizar cadastro)
 
 
 package "Coleta dos Dados"{
-cliente -- (Selecionar cidades ou atrações do roteiro)
+cliente -- (Selecionar cidades ou atrações do roteiro da API)
 
 coletador -- (Solicitar a API do Google para Coletar Dados sobre as Cidades)
 coletador -- (Registrar Rotas Já Otimizadas em uma Base de Dados)
 coletador -- (Formatar e Computar os Dados Adquiridos)
 API -- (Enviar dados sobre as cidades)
 API -- (Disponibilizar informações sobre as cidades)
-(Disponibilizar informações sobre as cidades) <.. (Selecionar cidades ou atrações do roteiro) : <<include>>
+(Disponibilizar informações sobre as cidades) <.. (Selecionar cidades ou atrações do roteiro da API) : <<include>>
 
 
 
@@ -30,11 +30,12 @@ API -- (Disponibilizar informações sobre as cidades)
 
 package "Otimização dos Roteiros"{
 cliente -- (Solicitar Rotas Otimizadas)
+otimizador -- (Registrar Rotas Já Otimizadas em uma Base de Dados)
 (Otimizar rotas) -- otimizador 
 (Solicitar Rotas Otimizadas) ..> (Otimizar rotas) : <<include>>
-(Selecionar cidades ou atrações do roteiro) ..> (Otimizar rotas): <<include>>
+(Selecionar cidades ou atrações do roteiro da API) ..> (Otimizar rotas): <<include>>
 (Solicitar a API do Google para Coletar Dados sobre as Cidades) ..> (Enviar dados sobre as cidades) : <<incude>>
-
+(Otimizar rotas) ..> (Registrar Rotas Já Otimizadas em uma Base de Dados) : <<include>>
 
 }
 
@@ -45,7 +46,7 @@ sys_admin -- (Consultar Relatórios sobre as Rotas)
 
 
 
-(Realizar cadastro) <.. (Selecionar cidades ou atrações do roteiro na API) : <<extends>>
+(Realizar cadastro) <.. (Selecionar cidades ou atrações do roteiro da API na API) : <<extends>>
 (Enviar dados sobre as cidades) ..> (Formatar e Computar os Dados Adquiridos) : <<include>>
 
 
