@@ -30,7 +30,6 @@ API -- (Disponibilizar informações sobre as cidades)
 
 package "Otimização dos Roteiros"{
 cliente -- (Solicitar Rotas Otimizadas)
-otimizador -- (Registrar Rotas Já Otimizadas em uma Base de Dados)
 (Otimizar rotas) -- otimizador 
 (Solicitar Rotas Otimizadas) ..> (Otimizar rotas) : <<include>>
 (Selecionar cidades ou atrações do roteiro da API) ..> (Otimizar rotas): <<include>>
