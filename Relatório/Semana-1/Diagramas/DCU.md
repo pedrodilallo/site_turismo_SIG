@@ -10,6 +10,9 @@ actor "Administrador do Sistema" as sys_admin
 actor "Sistema de Feedback" as feedback
 actor "Sistema de Coleta de dados" as coletador
 
+cliente -- (Realizar cadastro)
+
+
 package "Coleta dos Dados"{
 cliente -- (Selecionar cidades ou atrações do roteiro na API)
 
@@ -21,35 +24,32 @@ API -- (Disponibilizar informações sobre as cidades)
 (Disponibilizar informações sobre as cidades) <.. (Selecionar cidades ou atrações do roteiro) : <<include>>
 
 
+
 }
 
 
-cliente -- (Realizar cadastro)
+package "Otimização dos Roteiros"{
 cliente -- (Solicitar Rotas Otimizadas)
+(Otimizar rotas) -- otimizador 
+(Solicitar Rotas Otimizadas) ..> (Otimizar rotas) : <<include>>
+(Selecionar cidades ou atrações do roteiro) ..> (Otimizar rotas): <<include>>
+(Solicitar a API do Google para Coletar Dados sobre as Cidades) ..> (Enviar dados sobre as cidades) : <<incude>>
+
+
+}
 
 
 
 sys_admin -- (Consultar Relatórios sobre as Rotas)
 
-(Receber Cidades ou Atrações de Interesse dos Clientes) -- otimizador 
-(Otimizar Rotas) -- otimizador 
-(Verificar Satisfação das Restrições) -- otimizador 
-(Solicitar Rotas Otimizadas) ..> (Otimizar rotas) : <<include>>
 
 
 
 (Realizar cadastro) <.. (Selecionar cidades ou atrações do roteiro na API) : <<extends>>
-
 (Enviar dados sobre as cidades) ..> (Formatar e Computar os Dados Adquiridos) : <<include>>
-(Selecionar cidades ou atrações do roteiro) ..>  (Receber Cidades ou Atrações de Interesse dos Clientes) : <<include>>
 
-(Selecionar cidades ou atrações do roteiro) ..> (Otimizar rotas): <<include>>
 
-(Receber Cidades ou Atrações de Interesse dos Clientes) ..> (Otimizar rotas): <<include>>
-
-(Solicitar a API do Google para Coletar Dados sobre as Cidades) ..> (Enviar dados sobre as cidades) : <<incude>>
-
-package "FeedBacks"{
+package "Feedbacks"{
 
 (Enviar Feedbacks) ..> (Receber Feedbacks) : <<include>>
 (Receber Feedbacks) <.. (Elaborar Relatório sobre Feedbacks) : <<extends>>
