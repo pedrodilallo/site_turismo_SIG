@@ -2,13 +2,8 @@
 skinparam actorStyle awesome
 !theme mars
 left to right direction
-
 actor "Clientes" as cliente
-actor "API do Google sobre as cidades" as API
-actor "Sistema de Otimização" as  otimizador
 actor "Administrador do Sistema" as sys_admin
-actor "Sistema de Feedback" as feedback
-actor "Sistema de Coleta de dados" as coletador
 
 cliente -- (Realizar cadastro)
 
@@ -16,11 +11,16 @@ cliente -- (Realizar cadastro)
 
 
 package "Otimização dos Roteiros"{
+actor "Sistema de Otimização" as  otimizador
 
 
 (Otimizar rotas) -- otimizador 
 
+
     package "Coleta dos Dados"{
+        actor "Sistema de Coleta de dados" as coletador
+        actor "API do Google sobre as cidades" as API   
+
         cliente -- (Selecionar cidades ou atrações do roteiro da API)
         (Selecionar cidades ou atrações do roteiro da API) ..> (Otimizar rotas): <<include>>
         (Solicitar a API do Google para Coletar Dados sobre as Cidades) ..> (Enviar dados sobre as cidades) : <<incude>>
@@ -42,7 +42,7 @@ package "Otimização dos Roteiros"{
 
 
 
-sys_admin -- (Consultar Relatórios sobre as Rotas)
+(Consultar Relatórios sobre as Rotas) -- sys_admin
 
 
 
@@ -52,12 +52,13 @@ sys_admin -- (Consultar Relatórios sobre as Rotas)
 
 
 package "Feedbacks"{
+actor "Sistema de Feedback" as feedback
 
 (Enviar Feedbacks) ..> (Armazenar dados do Feedback) : <<include>>
 (Elaborar Relatório sobre Feedbacks) <.. (Consultar Relatórios sobre os Feedbacks) : <<include>>
 cliente -- (Enviar Feedbacks)
 feedback -- (Armazenar dados do Feedback)
-sys_admin -- (Consultar Relatórios sobre os Feedbacks)  
+(Consultar Relatórios sobre os Feedbacks) -- sys_admin
 feedback -- (Elaborar Relatório sobre Feedbacks)
 
 
