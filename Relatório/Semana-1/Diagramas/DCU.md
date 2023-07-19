@@ -31,7 +31,7 @@ package "Otimização dos Roteiros"{
         API -- (Disponibilizar informações sobre as cidades)
         (Disponibilizar informações sobre as cidades) <.. (Selecionar cidades ou atrações do roteiro da API) : <<include>>
         (Otimizar rotas) ..> (Registrar Rotas Já Otimizadas em uma Base de Dados) : <<include>>
-
+        (Registrar Rotas Já Otimizadas em uma Base de Dados) <.. (Consultar Relatórios sobre as Rotas)
 
     }
 
@@ -53,10 +53,11 @@ sys_admin -- (Consultar Relatórios sobre as Rotas)
 package "Feedbacks"{
 
 (Enviar Feedbacks) ..> (Armazenar dados do Feedback) : <<include>>
-(Elaborar Relatório sobre Feedbacks) ..> (Consultar Relatórios sobre os Feedbacks) : <<include>>
+(Elaborar Relatório sobre Feedbacks) <.. (Consultar Relatórios sobre os Feedbacks) : <<include>>
 cliente -- (Enviar Feedbacks)
 feedback -- (Armazenar dados do Feedback)
-sys_admin -- (Consultar Relatórios sobre os Feedbacks)
+sys_admin -- (Consultar Relatórios sobre os Feedbacks)  
+feedback -- (Elaborar Relatório sobre Feedbacks)
 
 
 
