@@ -1,7 +1,6 @@
 @startuml
 skinparam actorStyle awesome
 !theme mars
-left to right direction
 actor "Clientes" as cliente
 actor "Administrador do Sistema" as sys_admin
 

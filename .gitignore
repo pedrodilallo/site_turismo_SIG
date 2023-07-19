@@ -9,6 +9,7 @@
 !*.png
 !*.py
 !*.html
+!*.gv
 # !*.ipynb
 !dados_projeto_final.ipynb
 !*.csv
