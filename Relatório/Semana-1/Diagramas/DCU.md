@@ -14,7 +14,7 @@ cliente -- (Realizar cadastro)
 
 
 package "Coleta dos Dados"{
-cliente -- (Selecionar cidades ou atrações do roteiro na API)
+cliente -- (Selecionar cidades ou atrações do roteiro)
 
 coletador -- (Solicitar a API do Google para Coletar Dados sobre as Cidades)
 coletador -- (Registrar Rotas Já Otimizadas em uma Base de Dados)
