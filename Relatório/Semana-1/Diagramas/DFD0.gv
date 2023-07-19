@@ -2,7 +2,7 @@
 digraph dfd_nivel0 {
     layout=circo
     splines=true; esep=4;
-    edge[style=solid, penwidth="1", fontsize=10,labeldistance=0];
+    edge[style=solid, penwidth="1", fontsize=10,labeldistance=1];
     node[shape = record]
 
 
@@ -21,22 +21,23 @@ digraph dfd_nivel0 {
 
     
     
-    cliente -> sistema
+    cliente -> sistema[label="Dados_Cadastro"]
+    cliente -> sistema[label="Feedbacks"]
+    cliente -> sistema[label="dados_viagem"]
     
+    sys_admin -> sistema[label="Solicitação de Consulta"]
     
-    sys_admin -> sistema
+    otimizador -> sistema[label="Rotas Otimizadas"]
+    otimizador -> sistema[label="Relatório de Rotas"]
     
+    coletador -> sistema[headlabel="Registro de Rotas    "]
+    coletador -> sistema[headlabel="Dados Tratados       "]    
+    coletador -> sistema[headlabel=""]    
+    coletador -> sistema[headlabel=""]
+
+    API -> sistema[label="Dados_cidades"]
     
-    otimizador -> sistema
-    
-    
-    coletador -> sistema
-    
-    
-    API -> sistema
-    
-    
-    feedback -> sistema
+    feedback -> sistema[label="Relatório_Feedbacks"]
 
 }
 @enduml
