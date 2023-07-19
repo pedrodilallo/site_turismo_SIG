@@ -31,11 +31,12 @@ package "Otimização dos Roteiros"{
         API -- (Disponibilizar informações sobre as cidades)
         (Disponibilizar informações sobre as cidades) <.. (Selecionar cidades ou atrações do roteiro da API) : <<include>>
         (Otimizar rotas) ..> (Registrar Rotas Já Otimizadas em uma Base de Dados) : <<include>>
-        (Registrar Rotas Já Otimizadas em uma Base de Dados) <.. (Consultar Relatórios sobre as Rotas)
+        (Registrar Rotas Já Otimizadas em uma Base de Dados) <.. (Consultar Relatórios sobre as Rotas) : <<extends>>
 
     }
-
-
+(Registrar Rotas Já Otimizadas em uma Base de Dados) <.. (Elaborar Relatórios Sobre Rotas):<<include>>
+(Elaborar Relatórios Sobre Rotas) <.. (Consultar Relatórios sobre as Rotas): <<extends>> 
+(Elaborar Relatórios Sobre Rotas) -- otimizador
 
 }
 
