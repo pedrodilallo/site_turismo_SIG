@@ -52,12 +52,11 @@ sys_admin -- (Consultar Relatórios sobre as Rotas)
 
 package "Feedbacks"{
 
-(Enviar Feedbacks) ..> (Receber Feedbacks) : <<include>>
-(Receber Feedbacks) <.. (Elaborar Relatório sobre Feedbacks) : <<extends>>
-(Elaborar Relatório sobre Feedbacks) ..> (Consultar Relatórios sobre as Rotas) : <<extends>>
+(Enviar Feedbacks) ..> (Armazenar dados do Feedback) : <<include>>
+(Elaborar Relatório sobre Feedbacks) ..> (Consultar Relatórios sobre os Feedbacks) : <<include>>
 cliente -- (Enviar Feedbacks)
-feedback -- (Receber Feedbacks)
-feedback -- (Elaborar Relatório sobre Feedbacks)
+feedback -- (Armazenar dados do Feedback)
+sys_admin -- (Consultar Relatórios sobre os Feedbacks)
 
 
 
