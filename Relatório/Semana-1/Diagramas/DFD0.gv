@@ -8,7 +8,7 @@ digraph dfd_nivel0 {
 
 
 
-    otimizar_rota [shape=circle];
+    sistema [label="Sistema Principal",shape=circle];
     
 
     
@@ -21,22 +21,22 @@ digraph dfd_nivel0 {
 
     
     
-    cliente -> otimizar_rota
+    cliente -> sistema
     
     
-    sys_admin -> otimizar_rota
+    sys_admin -> sistema
     
     
-    otimizador -> otimizar_rota
+    otimizador -> sistema
     
     
-    coletador -> otimizar_rota
+    coletador -> sistema
     
     
-    API -> otimizar_rota
+    API -> sistema
     
     
-    feedback -> otimizar_rota
+    feedback -> sistema
 
 }
 @enduml
