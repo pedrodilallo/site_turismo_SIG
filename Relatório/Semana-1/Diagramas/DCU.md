@@ -2,7 +2,6 @@
 skinparam actorStyle awesome
 !theme mars
 
-left to right direction
 actor "Clientes" as cliente
 actor "Administrador do Sistema" as sys_admin
 
@@ -34,7 +33,6 @@ actor "Sistema de Otimização" as  otimizador
         API -- (Disponibilizar informações sobre as cidades)
         (Disponibilizar informações sobre as cidades) <.. (Selecionar cidades ou atrações do roteiro da API) : <<include>>
         (Otimizar rotas) ..> (Registrar Rotas Já Otimizadas em uma Base de Dados) : <<include>>
-        (Registrar Rotas Já Otimizadas em uma Base de Dados) <.. (Consultar Relatórios sobre as Rotas) : <<extends>>
 
         (Realizar cadastro) ..> (Armazenar Dados do cliente): <<include>>
 
@@ -44,7 +42,8 @@ actor "Sistema de Otimização" as  otimizador
 
     }
 
-(Elaborar Relatórios Sobre Rotas) ..> (Consultar Relatórios sobre as Rotas): <<include>> 
+
+(Elaborar Relatórios Sobre Rotas) <.. (Consultar Relatórios sobre as Rotas): <<include>> 
 (Elaborar Relatórios Sobre Rotas) -- otimizador
 
 }
