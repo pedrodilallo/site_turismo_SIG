@@ -21,23 +21,23 @@ digraph dfd_nivel0 {
 
     
     
-    cliente -> sistema[label="Dados_Cadastro"]
-    cliente -> sistema[label="Feedbacks"]
+    cliente -> sistema[label="dados_cadastro"]
+    cliente -> sistema[label="feedbacks"]
     cliente -> sistema[label="dados_viagem"]
     
-    sys_admin -> sistema[label="Solicitação de Consulta"]
+    sys_admin -> sistema[label="solicitacao_consulta"]
     
-    otimizador -> sistema[label="Rotas Otimizadas"]
-    otimizador -> sistema[label="Relatório de Rotas"]
+    otimizador -> sistema[label="rotas_otimizadas"]
+    otimizador -> sistema[label="relatorio_rotas"]
     
-    coletador -> sistema[headlabel="Registro de Rotas    "]
-    coletador -> sistema[headlabel="Dados Tratados       "]    
+    coletador -> sistema[headlabel="registro_rotas   "]
+    coletador -> sistema[headlabel="dados_tratados       "]    
     coletador -> sistema[headlabel=""]    
     coletador -> sistema[headlabel=""]
 
-    API -> sistema[label="Dados_cidades"]
+    API -> sistema[label="dados_cliente"]
     
-    feedback -> sistema[label="Relatório_Feedbacks"]
+    feedback -> sistema[label="relatorio_feedback"]
 
 }
 @enduml
