@@ -5,6 +5,7 @@ digraph dfd_nivel0 {
     edge[style=solid, penwidth="1", fontsize=7,labeldistance=0];
     node[shape = record]
 
+// /home/pedropdl/Documents/graduacao/anotacoes_engenharia/SIG/site_turismo_SIG
 
 
 
@@ -41,7 +42,7 @@ digraph dfd_nivel0 {
 
 #setas que vão
 
-    sistema -> coletador[label="dados_cidade"]
+    sistema -> coletador[label="dados_cidade",]
     sistema -> coletador[label="registro_rotas"]
     sistema -> coletador[label="dados_cliente"]
 
@@ -54,8 +55,8 @@ digraph dfd_nivel0 {
     sistema -> otimizador[label="dados_viagem"]
 
 
-    sistema -> sys_adm[label="relatorio_rotas"]
-    sistema -> sys_adm[label="relatorio_feedback"] 
+    sistema -> sys_admin[label="relatorio_rotas"]
+    sistema -> sys_admin[label="relatorio_feedback"] 
 
     sistema -> API[label="solicitacao_API"]
 
