@@ -32,8 +32,10 @@ digraph dfd_nivel0 {
     otimizador -> sistema[label="relatorio_rotas"]
     
     coletador -> sistema[label="dados_tratados"]    
+    coletador -> sistema[label="solicitacao_API"]    
 
-    API -> sistema[label="dados_cliente"]
+
+    API -> sistema[label="dados_cidade"]
     
     feedback -> sistema[label="relatorio_feedback"]
 
@@ -52,6 +54,10 @@ digraph dfd_nivel0 {
     sistema -> otimizador[label="dados_viagem"]
 
 
+    sistema -> sys_adm[label="relatorio_rotas"]
+    sistema -> sys_adm[label="relatorio_feedback"] 
+
+    sistema -> API[label="solicitacao_API"]
 
 }
 @enduml
