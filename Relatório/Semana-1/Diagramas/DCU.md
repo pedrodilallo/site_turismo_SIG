@@ -13,28 +13,28 @@ actor "Sistema de Coleta de dados" as coletador
 cliente -- (Realizar cadastro)
 
 
-package "Coleta dos Dados"{
-cliente -- (Selecionar cidades ou atrações do roteiro da API)
-
-coletador -- (Solicitar a API do Google para Coletar Dados sobre as Cidades)
-coletador -- (Registrar Rotas Já Otimizadas em uma Base de Dados)
-coletador -- (Formatar e Computar os Dados Adquiridos)
-API -- (Enviar dados sobre as cidades)
-API -- (Disponibilizar informações sobre as cidades)
-(Disponibilizar informações sobre as cidades) <.. (Selecionar cidades ou atrações do roteiro da API) : <<include>>
-
-
-
-}
 
 
 package "Otimização dos Roteiros"{
-cliente -- (Solicitar Rotas Otimizadas)
+
+
 (Otimizar rotas) -- otimizador 
-(Solicitar Rotas Otimizadas) ..> (Otimizar rotas) : <<include>>
-(Selecionar cidades ou atrações do roteiro da API) ..> (Otimizar rotas): <<include>>
-(Solicitar a API do Google para Coletar Dados sobre as Cidades) ..> (Enviar dados sobre as cidades) : <<incude>>
 (Otimizar rotas) ..> (Registrar Rotas Já Otimizadas em uma Base de Dados) : <<include>>
+
+    package "Coleta dos Dados"{
+        cliente -- (Selecionar cidades ou atrações do roteiro da API)
+        (Selecionar cidades ou atrações do roteiro da API) ..> (Otimizar rotas): <<include>>
+        (Solicitar a API do Google para Coletar Dados sobre as Cidades) ..> (Enviar dados sobre as cidades) : <<incude>>
+        coletador -- (Solicitar a API do Google para Coletar Dados sobre as Cidades)
+        coletador -- (Registrar Rotas Já Otimizadas em uma Base de Dados)
+        coletador -- (Formatar e Computar os Dados Adquiridos)
+        API -- (Enviar dados sobre as cidades)
+        API -- (Disponibilizar informações sobre as cidades)
+        (Disponibilizar informações sobre as cidades) <.. (Selecionar cidades ou atrações do roteiro da API) : <<include>>
+
+    }
+
+
 
 }
 
