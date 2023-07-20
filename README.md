@@ -55,9 +55,10 @@ informações no sistema em três níveis de detalhamento (0, 1 e 2).
 ## Tecnologias Utilizadas
 
 - Linguagem de Programação: Python
+- Ambiente de desenvolvimento: Artix Linux
 - Framework: Flask (para desenvolvimento da API)
-- Bibliotecas: pandas, scikit-learn, entre outras
-- Banco de Dados: SQLite
+- Bibliotecas: pandas, numpy, plot.ly, networkx, entre outras
+- Banco de Dados: MySQL
 
 ## Como Contribuir
 
