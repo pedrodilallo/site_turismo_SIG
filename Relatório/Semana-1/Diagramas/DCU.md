@@ -1,6 +1,7 @@
 @startuml
 skinparam actorStyle awesome
-!theme mars
+!theme vibrant
+
 
 actor "Clientes" as cliente
 actor "Administrador do Sistema" as sys_admin

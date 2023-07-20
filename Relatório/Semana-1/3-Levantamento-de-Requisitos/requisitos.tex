@@ -1,31 +1,61 @@
 \subsection{Análise de Requisitos}
 
 
-\subsubsection{Cadastro de Novos Clientes}
-O sistema deve proporcionar uma interface de cadastro de novos clientes, onde os usuários possam preencher informações pessoais, como nome, endereço de e-mail e preferências de viagem. Essas preferências incluem as cidades ou atrações turísticas que eles desejam visitar durante sua viagem. O cadastro é essencial para personalizar os roteiros de acordo com as escolhas individuais de cada cliente, oferecendo uma experiência turística mais adequada às suas expectativas.
+\subsubsection{Requisito 1 - Cadastro de Novos Clientes:} O sistema deve permitir que novos clientes se cadastrem fornecendo informações pessoais, como nome e endereço de e-mail. Essa funcionalidade é essencial para identificar e distinguir os usuários do sistema.
 
-\subsubsection{Receber Cidades ou Atrações de Interesse dos Clientes}
-Após o cadastro, o sistema permite que os clientes selecionem as cidades ou atrações turísticas que mais lhes interessam. Eles podem indicar os pontos turísticos específicos que desejam visitar, bem como as atividades ou eventos que gostariam de incluir em seus roteiros. Essa funcionalidade permite que os clientes expressem suas preferências de forma clara, tornando possível a criação de roteiros personalizados e alinhados com seus interesses individuais.
+\subsubsection{Requisito 2 - Selecionar Cidades ou Atrações do Roteiro:} Os clientes devem poder selecionar as cidades ou atrações turísticas que desejam incluir em seus roteiros de viagem. Essa funcionalidade visa permitir que os clientes personalizem seus roteiros com base em seus interesses específicos.
 
-\subsubsection{Acessar a API do Google para Coletar Dados sobre as Cidades}
-Para fornecer informações detalhadas sobre as cidades e atrações turísticas selecionadas pelos clientes, o sistema integra-se à API do Google ou a outras fontes confiáveis de dados. Por meio dessa API, o sistema pode obter dados relevantes, como horários de funcionamento, avaliações, endereços e descrições detalhadas dos pontos turísticos. A coleta dessas informações é fundamental para a criação de roteiros precisos e bem informados.
+\subsubsection{Requisito 3 - Acessar a API do Google para Coletar Dados sobre as Cidades:} O sistema precisa acessar a API do Google para obter informações atualizadas e relevantes sobre as cidades e atrações turísticas selecionadas pelos clientes. Esses dados são fundamentais para a otimização das rotas.
 
-\subsubsection{Formatar e Computar os Dados Adquiridos}
-Os dados obtidos da API do Google precisam ser tratados e formatados adequadamente para que possam ser usados no processo de otimização de rotas. As informações coletadas devem ser armazenadas em uma estrutura de dados apropriada, facilitando sua manipulação e utilização pelo sistema durante o processo de criação de roteiros turísticos otimizados.
+\subsubsection{Requisito 4 - Formatar e Computar os Dados Adquiridos:} Os dados coletados da API do Google devem ser formatados e computados adequadamente para permitir a otimização das rotas. Essa funcionalidade é responsável por preparar os dados para o Sistema de Otimização.
 
-\subsubsection{Otimizar Rotas}
-Uma das principais funcionalidades do sistema é a otimização das rotas turísticas. Com base nas cidades e atrações selecionadas pelos clientes, o sistema deve criar roteiros que maximizem a satisfação do cliente enquanto minimizam custos e tempo de deslocamento. Durante a otimização, o sistema considera restrições de tempo, horários de funcionamento das atrações e possíveis custos associados a cada visita.
+\subsubsection{Requisito 5 - Otimizar Rotas:} O sistema deve otimizar as rotas turísticas com base nas preferências dos clientes e nas informações das cidades ou atrações. Essa funcionalidade visa criar itinerários eficientes que maximizem a satisfação dos clientes.
 
-\subsubsection{Consultar Relatórios sobre as Rotas}
-O sistema deve gerar relatórios detalhados sobre as rotas otimizadas. Esses relatórios fornecem informações como a sequência de visitação das atrações, o tempo estimado de permanência em cada local, distâncias percorridas, custos totais e outras métricas relevantes. Os relatórios são úteis tanto para o cliente, que pode acompanhar seu itinerário, quanto para o administrador do sistema, que pode analisar o desempenho das rotas e realizar melhorias contínuas.
+\subsubsection{Requisito 6 - Elaborar Relatórios sobre Rotas:} O Sistema de Otimização deve ser capaz de elaborar relatórios detalhados sobre as rotas turísticas otimizadas. Esses relatórios fornecem informações valiosas sobre os itinerários gerados, permitindo análises e tomadas de decisões mais informadas.
 
-\subsubsection{Executar Pedidos de Otimização}
-O sistema permite que os clientes solicitem a otimização de suas rotas mesmo após a conclusão do roteiro inicial. Caso haja mudanças de planos ou novos interesses que surjam durante a viagem, o cliente pode solicitar uma nova otimização para seu roteiro. Essa flexibilidade garante que o cliente tenha a melhor experiência possível, adaptando seu itinerário de acordo com suas necessidades e desejos.
+\subsubsection{Requisito 7 - Consultar Relatórios sobre as Rotas:} Os clientes e o Administrador do Sistema devem poder consultar os relatórios sobre as rotas turísticas otimizadas. Essa funcionalidade permite que os usuários tenham acesso às informações relevantes e auxilia na avaliação da eficiência do sistema.
 
-\subsubsection{Verificar Satisfação das Restrições}
-Durante o processo de otimização de rotas, o sistema verifica se as restrições impostas pelo cliente, como horários de funcionamento das atrações e intervalos de tempo disponíveis para visitação, são atendidas pelo roteiro otimizado. Caso alguma restrição não seja satisfeita, o sistema oferece alternativas ou ajusta o roteiro de forma adequada, assegurando que o cliente possa aproveitar ao máximo suas visitas e experiências turísticas.
+\subsubsection{Requisito 8 - Armazenar Rotas Já Otimizadas em uma Base de Dados:} O Sistema de Coleta de Dados deve ser capaz de armazenar as rotas turísticas já otimizadas em uma base de dados. Essa funcionalidade é importante para garantir que os itinerários anteriores sejam mantidos para futuras consultas e referências.
 
-\subsubsection{Registro de Rotas Já Otimizadas em uma Base de Dados}
-O sistema registra as rotas já otimizadas em uma base de dados para fins de histórico e análise. Esses registros permitem que o administrador e os clientes possam acessar roteiros previamente otimizados, evitando retrabalhos e facilitando a consulta de itinerários anteriores. Essa funcionalidade também permite que o sistema aprenda com experiências anteriores e refine suas estratégias de otimização com base em dados históricos, melhorando continuamente o serviço oferecido.
+\subsubsection{Requisito 9 - Disponibilizar Informações sobre as Cidades:} A API do Google deve disponibilizar informações detalhadas sobre as cidades e atrações turísticas para que os clientes possam fazer suas seleções de forma adequada. Essa funcionalidade é fundamental para fornecer dados precisos e atualizados para o processo de otimização.
+
+\subsubsection{Requisito 10 - Enviar Feedbacks:} Os clientes devem poder enviar feedbacks sobre os roteiros turísticos e a experiência geral com o sistema. Essa funcionalidade permite que os usuários expressem suas opiniões e sugestões para aprimoramento contínuo do sistema.
+
+\subsubsection{Requisito 11 - Armazenar Dados do Cliente e dos Feedbacks:} O Sistema de Feedback deve ser capaz de armazenar os dados dos clientes cadastrados e os feedbacks enviados por eles. Essa funcionalidade é importante para garantir a persistência dos dados e possibilitar análises futuras.
+
+\subsubsection{Requisito 12 - Elaborar Relatório sobre Feedbacks:} O Sistema de Feedback deve elaborar relatórios detalhados sobre os feedbacks enviados pelos clientes. Esses relatórios são valiosos para a análise das sugestões e experiências relatadas pelos usuários.
 
 \subsection{Diagrama de Caso de Uso}
+
+O diagrama de caso de uso é uma ferramenta essencial na engenharia de requisitos, permitindo uma representação visual das interações entre os atores externos e as funcionalidades oferecidas pelo sistema. Nesta seção, apresentaremos o diagrama de caso de uso que descreve as principais funcionalidades do sistema de otimização de roteiros turísticos.
+
+O diagrama de caso de uso identifica os atores envolvidos no sistema, representados por \textit{clientes} e \textit{administrador do sistema}, e detalha as interações entre eles e o sistema. Além disso, apresenta as funcionalidades oferecidas, como o cadastro de novos clientes, a seleção de cidades ou atrações turísticas, a otimização de rotas, a consulta de relatórios sobre as rotas e a possibilidade de enviar feedbacks.
+
+Essa representação visual do sistema de otimização de roteiros turísticos é crucial para compreender claramente suas funcionalidades e requisitos, bem como para identificar os fluxos de interação entre os atores e o sistema. Na figura, \ref{fig:DCU} há uma miniatura do diagrama, que pode ser melhor consultado no apêdice.
+
+
+\begin{figure}[H]
+    \centering
+    \caption{Diagrama de Caso de Uso}
+    \label{fig:DCU}
+    \includegraphics[scale=0.22]{Diagramas/DCU.png}\\
+    \caption*{Fonte: Elaborado pelos autores}
+\end{figure}
+
+No diagrama de caso de uso, então, são observadas as interações entre os atores e as funcionalidades oferecidas pelo sistema de otimização de roteiros turísticos. O ator principal é denominado "Clientes", o qual interage com o sistema de diversas maneiras. Inicialmente, os clientes têm a capacidade de efetuar o cadastro no sistema, fornecendo suas informações pessoais para obter acesso às funcionalidades oferecidas.
+
+Outra interação relevante é a capacidade dos clientes de "Enviar Feedbacks". Essa funcionalidade possibilita que os clientes forneçam suas opiniões, sugestões e avaliações sobre os roteiros turísticos e a experiência geral com o sistema. Esses feedbacks são valiosos para a melhoria contínua do sistema e para atender melhor às necessidades dos clientes.
+
+Além do ator "Clientes", o "Administrador do Sistema" também desempenha um papel no diagrama. Ele tem acesso à funcionalidade de "Consultar Relatórios sobre as Rotas", que permite ao administrador visualizar relatórios detalhados elaborados sobre as rotas turísticas otimizadas. Tais relatórios são essenciais para o monitoramento do desempenho do sistema, a identificação de tendências e a tomada de decisões estratégicas.
+
+O pacote "Otimização dos Roteiros" é um elemento-chave no diagrama, no qual o "Sistema de Otimização" desempenha um papel central. Ele oferece a funcionalidade de "Otimizar Rotas", a qual consiste no processo de otimização dos itinerários turísticos com base nas informações coletadas sobre as cidades ou atrações selecionadas. Essa funcionalidade é a essência do sistema.
+
+O pacote "Coleta dos Dados" envolve o "Sistema de Coleta de Dados" e a "API do Google sobre as cidades". Esses atores trabalham em conjunto para coletar e disponibilizar informações detalhadas sobre as cidades e atrações turísticas. O sistema solicita dados relevantes à API do Google, a qual fornece as informações necessárias para que o sistema possa selecionar as cidades e atrações que atendam às preferências dos clientes.
+
+Por fim, o pacote "Feedbacks" é responsável por coletar e armazenar os feedbacks enviados pelos clientes. O "Sistema de Feedback" possui a funcionalidade de "Armazenar dados do Feedback", permitindo que os feedbacks enviados pelos clientes sejam registrados para análise e futuras melhorias. Ademais, o sistema elabora relatórios sobre esses feedbacks, fornecendo informações importantes para avaliar a satisfação dos clientes e a eficácia do sistema em atender às suas expectativas.
+
+Essas interações e funcionalidades detalhadas no diagrama de caso de uso oferecem uma visão clara das principais características do sistema de otimização de roteiros turísticos, enfatizando a personalização dos itinerários e a coleta de feedbacks como aspectos fundamentais para aprimorar a experiência dos clientes e garantir a eficiência do sistema
+
+\subsection{Diagrama de Fluxo de Dados}
+
+O diagrama de fluxo de dados é uma poderosa ferramenta de modelagem que descreve como as informações fluem dentro de um sistema, identificando as entradas, processamentos e saídas de dados. Nesta seção, apresentaremos o diagrama de fluxo de dados em três níveis (0, 1 e 2) do sistema de otimização de roteiros turísticos. O objetivo é fornecer uma visão detalhada das diferentes camadas do sistema, desde o nível mais abstrato até o mais detalhado.
