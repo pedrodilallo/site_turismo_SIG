@@ -71,7 +71,7 @@ Se você deseja contribuir para o projeto, sinta-se à vontade para realizar um 
 
 ## Licença
 
-Este projeto é licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto é licenciado sob a Licença GNUGPL - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 
 
