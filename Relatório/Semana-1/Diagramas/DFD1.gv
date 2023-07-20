@@ -23,8 +23,47 @@ digraph DiagramaDeCasoDeUso {
     feedback [label="Sistema de Feedback"]    
 
 
-    cliente -> cadastro[label="dados_cliente"]
+    # Setas que vão
+    cliente -> sistema[label="dados_cadastro"]
+    cliente -> sistema[label="feedbacks"]
+    cliente -> sistema[label="dados_viagem"]
+    cliente -> sistema[label="solicitacao_consulta"]
+    
+    sys_admin -> sistema[label="solicitacao_consulta_fdbk"]
+    sys_admin -> sistema[label="solicitacao_consulta_rotas"]
 
+    otimizador -> sistema[label="rotas_otimizadas"]
+    otimizador -> sistema[label="relatorio_rotas"]
+  
+    
+    coletador -> sistema[label="dados_tratados"]    
+    coletador -> sistema[label="solicitacao_API"]    
+
+
+    API -> sistema[label="dados_cidade"]
+    
+    feedback -> sistema[label="relatorio_feedback"]
+
+#setas que vão
+
+    sistema -> coletador[label="dados_cidade",]
+    sistema -> coletador[label="registro_rotas"]
+    sistema -> coletador[label="dados_cliente"]
+
+    sistema -> feedback[label="feedback_clientes"]
+    sistema -> feedback[label="solicitacao_relatorio_fdbk"]
+
+
+    sistema -> otimizador[label="dados_cidade"]
+    sistema -> otimizador[label="solicitacao_relatorio_rotas"]
+    sistema -> otimizador[label="dados_viagem"]
+    sistema -> otimizador[label="solicitacao_consulta"]
+
+
+    sistema -> sys_admin[label="relatorio_rotas"]
+    sistema -> sys_admin[label="relatorio_feedback"] 
+
+    sistema -> API[label="solicitacao_API"]
 
 }
 
