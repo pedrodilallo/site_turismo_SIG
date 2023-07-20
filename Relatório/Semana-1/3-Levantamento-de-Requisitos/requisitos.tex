@@ -71,18 +71,27 @@ No DFD nível 0, foi representado a direção dos fluxos de informações que en
     \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
 \end{figure}
 
+O sistema de otimização, por exemplo, envia para o sistema principal rotas otimizadas e recebe dados de cidades e solicitações de consulta. 
+
 
 \subsubsection{Nivel 1}
 
+Um Diagrama de Fluxo de Dados (DFD) de nível 1 é uma representação gráfica do sistema que descreve o fluxo de informações entre os principais processos e as principais entidades (ou atores) que interagem com o sistema.
+No DFD de nível 1, o processo central do Diagrama de Contexto é decomposto em subprocessos menores, criando uma hierarquia de processos. Cada subprocesso representa uma parte específica do sistema e suas funcionalidades mais detalhadas. As setas representam os fluxos de dados entre os processos e as entidades, indicando a direção do fluxo das informações.
+
+Esse nível de detalhamento torna o DFD de nível 1 mais compreensível e específico, permitindo que os analistas de sistemas e desenvolvedores tenham uma visão mais detalhada do funcionamento do sistema e das interações entre seus componentes.
+
+Geralmente, em um DFD de nível 1, os processos principais são numerados, e as entradas e saídas de cada processo são identificadas por nome e direção do fluxo de dados. Isso ajuda a entender como as informações são processadas e compartilhadas entre os diferentes elementos do sistema.
 
 \begin{figure}[H]
     \centering
     \caption{Diagrama Fluxo de Dados - Nível 1}
-    \label{fig:DFD0}
+    \label{fig:DFD1}
     \includegraphics[scale=0.5]{Diagramas/DFD1.png}\\
     \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
 \end{figure}
 
+As relações são representadas da mesma maneira que no diagrama de nível 0. Aqui, porém, estão representadas também as bases de dados que são necssárias para que o sistema funcione e como os dados fluem entre elas e os processos. No caso, elas estão representadas por duas linhas paralelas com o nome da base entre as linhas
 
 
 \subsubsection{Nivel 2}
@@ -90,7 +99,7 @@ No DFD nível 0, foi representado a direção dos fluxos de informações que en
 \begin{figure}[H]
     \centering
     \caption{Diagrama Fluxo de Dados - Nível 2}
-    \label{fig:DFD0}
+    \label{fig:DFD2}
     \includegraphics[scale=0.29]{Diagramas/DFD2.png}\\
     \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
 \end{figure}
@@ -98,5 +107,58 @@ No DFD nível 0, foi representado a direção dos fluxos de informações que en
 
 \subsection{Diagrama de Entidade Relacionamento}
 
+\begin{figure}[H]
+    \centering
+    \caption{Diagrama de Entidade Relacionamento}
+    \label{fig:DER}
+    \includegraphics[scale=0.3]{Diagramas/DER.png}\\
+    \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
+\end{figure}
+
+O diagrama busca fornecer informações sobre como as entidades se relacionam dentro do sistema. A entidade "cliente" seleciona a entidade "Cidades" e essa seleção possui os atributos do email do cliente e do ID das cidades. Como um cliente pode selecionar várias cidades e uma cidade pode ser selecionaada por vários clientes, a relação construída é de "N para N". 
+
+Outros aspectos que podem ser percebidos no diagrama é que rotas podem ser consultadas por clientes em alguma data e possuem Hoteis, atrações e Restaurantes. Estes, por sua vez, são "possuídos" (ou seja, pertencem) por uma cidade. Neste último caso, temos uma relação de "1 para N", porque uma cidade pode possuir várias dessas entidades, mas elas pertencem a uma, e somente uma, cidade. 
+
+As demais relações podem ser entendidas e explicadas por vias análogas e a relação entre elas visualizada de maneira mais simples no modelo relacional. 
+
+
 
 \subsection{Modelo Relacional}
+
+
+\begin{figure}[H]
+    \centering
+    \caption{Modelo relacional}
+    \label{fig:DER}
+    \includegraphics[scale=0.42]{Diagramas/Relacional.png}\\
+    \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
+\end{figure}
+
+O modelo relacional apresentado descreve a estrutura de dados do sistema de otimização de roteiros turísticos em PlantUML. Nesse modelo, temos diversas classes que representam as principais entidades do sistema, suas atribuições e relacionamentos entre si.
+
+As classes principais incluem:
+\begin{enumerate}
+    \item \textbf{Cliente}: Representa os clientes do sistema e suas informações pessoais, como e-mail, nome, idade, gênero e endereço.
+    \item \textbf{Cidade}: Refere-se às cidades cadastradas no sistema, com atributos como ID da cidade, nome e estado.
+    \item \textbf{Hotel}: Descreve os hotéis disponíveis nas cidades do sistema, com informações como ID do hotel, nome, ID da cidade, dados do modelo, preço da diária e endereço.
+    \item \textbf{Restaurante}: Representa os restaurantes presentes nas cidades, com atributos como ID do restaurante, nome, ID da cidade, dados do modelo e ticket médio.
+    \item \textbf{Atração}: Refere-se às atrações turísticas nas cidades, com atributos como ID da atração, nome, ID da cidade, preço da atração e endereço.
+    \item \textbf{Rotas}: Representa as rotas turísticas criadas pelo sistema, com informações como ID da rota, ID da cidade, ID do hotel, ID do restaurante, lucro e duração.
+    \item \textbf{RelatorioRotas}: Descreve os relatórios gerados para as rotas, contendo ID do relatório, data inicial, data final, data de emissão, estatísticas das rotas e lucro total.
+    \item \textbf{Feedbacks}: Representa os feedbacks enviados pelos clientes, com atributos como ID do feedback, e-mail do cliente e data do feedback.
+    \item \textbf{RelatorioFeedbacks}: Descreve os relatórios gerados para os feedbacks, contendo ID do relatório, data inicial, data final, data de emissão, estatísticas dos feedbacks e lucro total.
+    \item \textbf{AdministradorSistema}: Refere-se aos administradores do sistema, com informações como ID do administrador, nome e cargo.
+\end{enumerate}
+
+Os relacionamentos entre as classes são representados por associações. Por exemplo:
+\begin{itemize}
+    \item \textbf{Cliente} está associado à \textbf{Cidade}, \textbf{Rotas} e \textbf{Feedbacks}, indicando que um cliente pode estar relacionado a várias cidades, rotas e feedbacks.
+    \item \textbf{Cidade} possui associações com \textbf{Hotel}, \textbf{Restaurante} e \textbf{Atração}, mostrando que uma cidade pode ter vários hotéis, restaurantes e atrações associados a ela.
+    \item \textbf{Rotas} está associado a \textbf{Hotel}, \textbf{Atração} e \textbf{Restaurante}, indicando que uma rota pode incluir vários hotéis, atrações e restaurantes.
+    \item \textbf{RelatorioRotas} está associado a \textbf{Rotas}, significando que um relatório de rotas pode abranger várias rotas.
+    \item \textbf{RelatorioFeedbacks} está associado a \textbf{Feedbacks}, indicando que um relatório de feedbacks pode conter vários feedbacks.
+    \item \textbf{AdministradorSistema} está associado a \textbf{RelatorioRotas} e \textbf{RelatorioFeedbacks}, mostrando que um administrador pode ter acesso a vários relatórios de rotas e feedbacks.
+\end{itemize}
+
+Esse modelo relacional descreve a estrutura de dados do sistema e os relacionamentos entre as entidades, fornecendo uma base sólida para a implementação do sistema de otimização de roteiros turísticos. Ele permite uma organização eficiente e precisa das informações, facilitando a consulta e manipulação dos dados, bem como a geração de relatórios para auxiliar a tomada de decisões.
+
