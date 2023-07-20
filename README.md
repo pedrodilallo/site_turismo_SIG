@@ -65,9 +65,8 @@ Se você deseja contribuir para o projeto, sinta-se à vontade para realizar um 
 
 ## Equipe
 
-- Pedro Dilallo - Desenvolvedor principal e pesquisador
-- Ana Silva - Desenvolvedora e especialista em Pesquisa Operacional
-- João Oliveira - Designer e analista de requisitos
+- Pedro Peverari Di Lallo - Desenvolvedor principal e pesquisador
+- João Victor Pantaroto - Desenvolvedor
 
 ## Licença
 
