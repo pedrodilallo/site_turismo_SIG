@@ -68,7 +68,7 @@ No DFD nível 0, foi representado a direção dos fluxos de informações que en
     \caption{Diagrama Fluxo de Dados - Nível 0}
     \label{fig:DFD0}
     \includegraphics[scale=0.5]{Diagramas/DFD0.jpeg}\\
-    \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
+    \caption*{Fonte: Elaborado pelos autores}
 \end{figure}
 
 O sistema de otimização, por exemplo, envia para o sistema principal rotas otimizadas e recebe dados de cidades e solicitações de consulta. 
@@ -88,7 +88,7 @@ Geralmente, em um DFD de nível 1, os processos principais são numerados, e as 
     \caption{Diagrama Fluxo de Dados - Nível 1}
     \label{fig:DFD1}
     \includegraphics[scale=0.5]{Diagramas/DFD1.png}\\
-    \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
+    \caption*{Fonte: Elaborado pelos autores}
 \end{figure}
 
 As relações são representadas da mesma maneira que no diagrama de nível 0. Aqui, porém, estão representadas também as bases de dados que são necssárias para que o sistema funcione e como os dados fluem entre elas e os processos. No caso, elas estão representadas por duas linhas paralelas com o nome da base entre as linhas
@@ -96,14 +96,31 @@ As relações são representadas da mesma maneira que no diagrama de nível 0. A
 
 \subsubsection{Nivel 2}
 
+O Diagrama de Fluxo de Dados de nível 2 para o processo de otimização de rota oferece uma visão mais detalhada e aprofundada do funcionamento interno desse processo crucial do sistema. Esse diagrama mostra como as informações fluem e são processadas dentro do sistema durante a etapa de otimização de roteiros turísticos.
+
+O processo de otimização de rota é considerado o coração do sistema devido à sua importância estratégica e impacto direto na qualidade das experiências turísticas oferecidas aos clientes.  Na figura \ref{fig:DFD2} podemos visualizar esse diagrama:
+
 \begin{figure}[H]
     \centering
     \caption{Diagrama Fluxo de Dados - Nível 2}
     \label{fig:DFD2}
     \includegraphics[scale=0.29]{Diagramas/DFD2.png}\\
-    \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
+    \caption*{Fonte: Elaborado pelos autores}
 \end{figure}
 
+A seguir, serão destacados os principais aspectos do Diagrama de Fluxo de Dados de nível 2 e sua relevância para o sistema:
+
+    \textbf{Entradas Detalhadas:} O diagrama apresenta as entradas detalhadas necessárias para o processo de otimização de rota. Isso inclui informações sobre as preferências dos clientes, como as cidades ou atrações que desejam visitar, as restrições temporais e orçamentárias, entre outros dados relevantes. Essas entradas são fundamentais para garantir que os roteiros sejam personalizados e adaptados às necessidades de cada turista.
+
+    \textbf{Utilização de Modelos de Pesquisa Operacional:} O diagrama evidencia a aplicação dos modelos de Pesquisa Operacional no processo de otimização de rota. Esses modelos matemáticos avançados permitem resolver problemas complexos de forma eficiente, considerando restrições como janelas de tempo, custos e distâncias percorridas. A utilização desses modelos é essencial para garantir a criação de itinerários lógicos e otimizados.
+
+    \textbf{Integração com o Sistema de Coleta de Dados:} O diagrama mostra como o processo de otimização de rota se integra com o Sistema de Coleta de Dados. Esse sistema é responsável por coletar informações detalhadas sobre as cidades e atrações turísticas, como horários de funcionamento, atrações disponíveis e dados relevantes. Esses dados são cruciais para a tomada de decisões durante a etapa de otimização.
+
+    \textbf{Processamento e Geração de Rotas Otimizadas:} O diagrama revela como as informações coletadas e as entradas dos clientes são processadas para gerar rotas otimizadas. Nessa etapa, os algoritmos de Pesquisa Operacional são aplicados para calcular as melhores sequências de visitas, considerando as preferências dos clientes e as restrições das atrações. Esse processamento é o cerne do sistema, pois é responsável por criar os itinerários altamente satisfatórios para os turistas.
+
+    \textbf{Saída de Rotas Otimizadas:} O diagrama destaca a saída resultante do processo de otimização, ou seja, as rotas turísticas otimizadas. Essas rotas representam os itinerários personalizados para cada cliente, levando em conta suas preferências e as características das atrações turísticas. Essa saída é o produto final do processo e será utilizada para guiar os turistas em suas jornadas.
+
+O processo de otimização de rota é o coração do sistema porque é o ponto central onde ocorre a tomada de decisões fundamentais para a satisfação dos clientes. Através da aplicação de algoritmos avançados e integração de informações relevantes, esse processo é responsável por criar os itinerários personalizados e eficientes que maximizam a experiência do viajante.
 
 \subsection{Diagrama de Entidade Relacionamento}
 
@@ -112,7 +129,7 @@ As relações são representadas da mesma maneira que no diagrama de nível 0. A
     \caption{Diagrama de Entidade Relacionamento}
     \label{fig:DER}
     \includegraphics[scale=0.3]{Diagramas/DER.png}\\
-    \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
+    \caption*{Fonte: Elaborado pelos autores}
 \end{figure}
 
 O diagrama busca fornecer informações sobre como as entidades se relacionam dentro do sistema. A entidade "cliente" seleciona a entidade "Cidades" e essa seleção possui os atributos do email do cliente e do ID das cidades. Como um cliente pode selecionar várias cidades e uma cidade pode ser selecionaada por vários clientes, a relação construída é de "N para N". 
@@ -131,7 +148,7 @@ As demais relações podem ser entendidas e explicadas por vias análogas e a re
     \caption{Modelo relacional}
     \label{fig:DER}
     \includegraphics[scale=0.42]{Diagramas/Relacional.png}\\
-    \caption*{Fonte: Elaborado pelos autores, Figura completa disponível no apêndice}
+    \caption*{Fonte: Elaborado pelos autores}
 \end{figure}
 
 O modelo relacional apresentado descreve a estrutura de dados do sistema de otimização de roteiros turísticos em PlantUML. Nesse modelo, temos diversas classes que representam as principais entidades do sistema, suas atribuições e relacionamentos entre si.
