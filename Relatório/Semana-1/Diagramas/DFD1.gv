@@ -1,0 +1,31 @@
+@startuml
+digraph DiagramaDeCasoDeUso {
+
+    layout=circo;
+    splines=ortho; 
+    esep=1;
+    edge[style=solid, penwidth="1", fontsize=7,labeldistance=0];
+    node[shape = record];
+
+// /home/pedropdl/Documents/graduacao/anotacoes_engenharia/SIG/site_turismo_SIG
+
+
+
+    cadastro [label="Realizar Cadastro",shape=circle];
+    
+
+    
+    cliente [label="Clientes"]
+    sys_admin [label="Administrador do Sistema"]
+    otimizador [label="Sistema de Otimização"]
+    coletador [label="Sistema de Coleta de dados"]
+    API [label="API do Google sobre as cidades"]
+    feedback [label="Sistema de Feedback"]    
+
+
+    cliente -> cadastro[label="dados_cliente"]
+
+
+}
+
+@enduml
