@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext} % Times New Roman
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{afterpage}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{url}
+
+\makeindex % Criar índice depois
+
+
+% Início do corpo do texto
+\begin{document}
+
+\input{0-Capa/capa.tex}
+
+\section*{Case Description}
+
+\input{1-case_description/case_description.tex}
+
+\section*{Case Synopsis}
+\input{2-case_synopsis/case_synopsis.tex}
+
+
+\end{document}
